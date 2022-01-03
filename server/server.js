@@ -1,9 +1,10 @@
 const express = require('express')
-const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const passport = require('passport')
+const userRoutes = require('./routes/userRoutes')
 
-dotenv.config()
+require('dotenv').config()
+
 const app = express()
 
 app.set('port', process.env.PORT || 4000)
@@ -18,3 +19,11 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${
 })
 .then(() => {console.log("we are connected to the database.")})
 .catch((error) => { console.log('an error occurred while connecting ot the db', error)})
+
+const PORT = process.env.PORT || 8000
+
+
+
+app.use('/users',userRoutes)
+app.listen(PORT, console.log(`server is running on ${PORT}`) )
+
