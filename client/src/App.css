@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: roboto;
 }
 
 .App-logo {
@@ -35,4 +36,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* my styles */
+
+.nav-list{
+  display: flex;
+  justify-content: end;
+  justify-content: space-around;
+  font-size: 1.3em;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
 }

@@ -9,7 +9,7 @@ const MainRouter = () => {
         <NavBar/>
         <main>
             <Routes>
-                <Route exact path='/' exact component={<Landing/>}/>
+                <Route path='/' element={<Landing/>}/>
             </Routes>
         </main>
         </Router>
