@@ -1,7 +1,11 @@
 import React, {useState} from 'react'
-import Form from './Form'
+import { useNavigate} from 'react-router-dom'
+import axios from '../../util/axiosInstance'
+import LoginForm from './LoginForm'
+
 
 const Landing = () => {
+    const navigate = useNavigate()
     const [username,setUsername] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
@@ -21,14 +25,28 @@ const Landing = () => {
         setPassword(e.target.value)
     }
 
-    const onSubmitHandle = (e) =>{
+    const onSubmitHandle = async (e) =>{
         e.preventDefault()
-        console.log(username,email,password)
+        const formData = new FormData(e.target)
+
+        const data = {
+            username: formData.get('username'),
+            email: formData.get('email'),
+            password:formData.get('password')
+        }
+
+        try {
+            const response = await axios.post('/users/login', data)
+            console.log(response)
+
+        } catch (error) {
+            
+        }
     }
     return (
         <div>
             <h1>Landing</h1>
-            <Form username={username} onChangeUserName={onChangeUsername}
+            <LoginForm username={username} onChangeUserName={onChangeUsername}
              email={email} onChangeEmail={onChangeEmail} redBorder={redBorder}
              password={password} onChangePassword={onChangePassword}
              onSubmitHandle={onSubmitHandle}

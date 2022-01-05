@@ -42,7 +42,7 @@
 
 .nav-list{
   display: flex;
-  justify-content: end;
+  flex-direction: end;
   justify-content: space-around;
   font-size: 1.3em;
 }
