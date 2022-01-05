@@ -37,7 +37,11 @@ exports.login = async (req,res) =>{
        if(checkPassword){
            const token = await auth.generateToken(user)
 
-           return res.status(200).json({token:token}) //.redirect('/users/messageboard')
+           return res.status(200).cookie('jwt', token, {
+               httpOnly:true,
+               secure:false,
+               sameSite:'lax'
+           }).send('user login successful')//.redirect('/users/messageboard')
        } else{
            return res.status(400).json({message: 'Password not matching'})
        }
