@@ -47,7 +47,12 @@ exports.updateMessage = async (req,res) =>{
 
 //do I need to use method override
 exports.deleteMessage = async (req,res) =>{
-   
-    const deleteMessage = await Message.findByIdAndDelete({_id: req.params.id})
+   try {
+       const deleteMessage = await Message.findByIdAndDelete({_id: req.params.id})
+       return res.status(200).json({message: "Post has been deleted"})
+   } catch (error) {
+       return res.status(400).json({message: "could not delete post"})
+   }
+    
     // const deleteMessage = await Message.deleteOne()
 }
