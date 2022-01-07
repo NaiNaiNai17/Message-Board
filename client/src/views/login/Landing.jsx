@@ -45,12 +45,13 @@ const Landing = () => {
     }
     return (
         <div>
-            <h1>Landing</h1>
+             <h1>Landing</h1>
             <LoginForm username={username} onChangeUserName={onChangeUsername}
              email={email} onChangeEmail={onChangeEmail} redBorder={redBorder}
              password={password} onChangePassword={onChangePassword}
              onSubmitHandle={onSubmitHandle}
-            />
+            /> 
+            
             
         </div>
     )
