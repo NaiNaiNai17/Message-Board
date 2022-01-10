@@ -10,16 +10,16 @@ const LoginForm = (props) => {
     <legend className="f4 fw6 ph0 mh0">Sign In</legend>
 
     <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-    <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address" id="email-address" value={props.email} onChange={props.onChangeEmail} style={props.redBorder ? {border: "solid 1px red"} : null}/> 
+    <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address" id="email-address" /> 
    
 
 
     <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-    <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" id="password"/>
+    <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password" id="password" />
     
-    <>
-      <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in"/>
-   </>
+    <div className="mt2">
+      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in" onChange={props.onSubmitHandle}/>
+   </div>
     </fieldset>
    
 </form>

@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar'
 import Landing from '../views/login/Landing'
 import Register from '../views/register/Register'
 import MessageBoard from '../views/messageboard/MessageBoard'
-
+import Logout from '../views/logout/Logout'
 
 const MainRouter = () => {
     return (
@@ -15,6 +15,7 @@ const MainRouter = () => {
                 <Route path='/' element={<Landing/>}/>
                 <Route path='/register' element={<Register/>} />
                 <Route path='/messageboard' element={<MessageBoard/>} />
+                <Route path='/logout' element={<Logout/>} />
             </Routes>
         </main>
         </Router>
