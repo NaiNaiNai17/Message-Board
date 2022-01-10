@@ -14,13 +14,16 @@ const messageRoutes = require('./routes/messageRoutes')
 require('dotenv').config()
 
 const app = express()
-
+app.use(cors({
+   credentials: true,
+   origin:true,
+}))
 app.set('port', process.env.PORT || 4000)
 app.use(logger('dev'));
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(methodOverride('X-HTTP-Method-Override'))
-app.use(cors())
+
 app.use(passport.initialize())
 
 app.use(cookieParser())

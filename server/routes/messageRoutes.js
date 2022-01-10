@@ -9,6 +9,7 @@ router.use(passport.authenticate('jwt', {
     session:false
 }))
 router.post('/post', controller.createMessage)
+
 router.get('/list', controller.listMessages)
 router.put('/:id', controller.updateMessage) //edit
 router.delete('/:id', controller.deleteMessage)
