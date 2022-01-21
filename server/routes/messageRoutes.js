@@ -5,6 +5,7 @@ const router = express.Router();
 
 const controller = require('../controller/messageController')
 
+
 router.use(passport.authenticate('jwt', {
     session:false
 }))

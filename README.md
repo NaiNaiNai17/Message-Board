@@ -1,6 +1,6 @@
 # Message Board App
 
-This is a Message Board App. A template that can be used for creating your own Message Board. I'm building the Frontend with React, and using CSS and the Tachyons Framework for Styling. The Backend has already been completed in NodeJS and Express. Backend has been tested and runs perfectly in Insomnia and is also logged with Morgan. 
+This is a Message Board App. A template that can be used for creating your own Message Board. I'm building the Frontend with React, and using CSS and the Tachyons Framework for Styling. The Backend has already been completed in NodeJS and Express. Backend has been tested and runs perfectly in Insomnia and is also logged with Morgan. I used Passport and JWT for Authorization and Authentication.
 
 Users can sign up and login,then they are authorized to post messages, edit their own messages and delete their own messages. Users can view each others messages. 
 
